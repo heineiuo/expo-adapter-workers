@@ -2,7 +2,9 @@
   "name": "expo-adapter-workers",
   "version": "1.0.0",
   "type": "module",
-  "bin": "./bin/pre-deploy.js",
+  "bin": {
+    "expo-adapter-workers": "bin/pre-deploy.js"
+  },
   "exports": {
     ".": "./dist/index.js"
   },
