@@ -1,6 +1,6 @@
 {
   "name": "expo-adapter-workers",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "bin": {
     "expo-adapter-workers": "bin/pre-deploy.js"
@@ -8,6 +8,10 @@
   "exports": {
     ".": "./dist/index.js"
   },
+  "files": [
+    "dist",
+    "bin"
+  ],
   "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc src/*.ts --declaration --moduleResolution NodeNext --module NodeNext --outDir dist"
