@@ -34,7 +34,7 @@ async function regenerate(distDir: string) {
       namedRegex: new RegExp("${route.namedRegex}"),
       routeKeys: ${JSON.stringify(route.routeKeys)},
       generated: ${route.generated ?? false},
-      "module": import("${`${relativeDistDir}/${route.page.slice(2)}.html`}")
+      "module": import("${`${relativeDistDir}/${route.page}.html`}")
     }`;
     })
     .join(",");
@@ -45,7 +45,7 @@ async function regenerate(distDir: string) {
       page: "${route.page}",
       namedRegex: new RegExp("${route.namedRegex}"),
       routeKeys: ${JSON.stringify(route.routeKeys)},
-      module: import("${`${relativeDistDir}/${route.page.slice(2)}.html`}")
+      module: import("${`${relativeDistDir}/${route.page}.html`}")
     }`;
     })
     .join(",");
