@@ -6,9 +6,11 @@ import findNodeModule from "find-node-modules";
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
 async function regenerate(distDir: string) {
-  const routesManifest = await import(`${distDir}/_expo/routes.json`, {
-    assert: { type: "json" },
-  });
+  const routesManifestContent = await fs.readFile(
+    `${distDir}/_expo/routes.json`,
+    "utf-8"
+  );
+  const routesManifest = { default: JSON.parse(routesManifestContent) };
 
   const relativeDistDir = path.relative(__dirname, distDir)
 
